@@ -4,23 +4,32 @@ queue_rules:
       - "#approved-reviews-by>=1"
 
 pull_request_rules:
-  - name: put bug fix to merge queue on approval with high priority
+  - name: automatic merge of 🚑 hotfix (high priority)
     conditions:
       - "#approved-reviews-by>=1"
       - label=A-bug
-      
     actions:
       queue:
         name: shared_queue
+        method: squash
+        
+  - name: automatic merge squash on website/docs(low priority)
+    conditions:
+      - "#approved-reviews-by>=1"
+      - -files~=^(website/)
+    actions:
+      queue:
+        name: shared_queue
+        method: squash
 
   - name: put other pr to merge queue
     conditions:
       - "#approved-reviews-by>=1"
       - label!=A-bug
-
     actions:
       queue:
         name: shared_queue
+        method: squash
         
 # if there is a conflict in a approved PR, ping the author.
   - name: ping author if there is conflicts
@@ -45,24 +54,25 @@ pull_request_rules:
 
           Please review the labels and make any necessary changes.
 
-  - name: label on new feature
+  # Assign pr label based of tags
+  - name: label on New Feature
     conditions:
       - 'title~=^(feat)(\(.*\))?:'
     actions:
       label:
         add:
           - PR-feature
-  - name: label on bug fix
+  - name: label on Bug Fix
     conditions:
       - 'title~=^(fix)(\(.*\))?:'
     actions:
       label:
         add:
           - PR-bug
-  - name: label on Documentation
+  - name: label on Refactor
     conditions:
-      - 'title~=^(docs)(\(.*\))?:'
+      - 'title~=^(refactor)(\(.*\))?:'
     actions:
       label:
         add:
-          - PR-docs
+          - pr-refactor
