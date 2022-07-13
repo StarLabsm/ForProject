@@ -25,6 +25,42 @@ pull_request_rules:
         method: squash
 
   # Check if PR title contain valid types
+  - name: Comment PR if title not semantic
+    conditions:
+          - author!=Mergify
+          - 'title~=^(feat|fix|docs|workflow|style|refactor|test|website|chore)(\(.*\))?:'
+    actions:
+      comment:
+        message: |
+          This pull request's title is not fulfill the requirements. @{{author}} please update it 🙏.
+
+          Valid format:
+
+          ```
+          fix(vc): fix sth..... (#3306)
+            ^         ^---------^  ^----^
+            |         |            |
+            |         +            +-> you issue id.
+            |         |
+            |         +-> Summary in present tense.
+            |
+            +-------> Type: feat, fix, docs, workflow, style, refactor, test, website, chore
+          ```
+
+          Valid types:
+
+          - `feat`: new feature for stonedb
+          - `fix`: bug fix for stonedb
+          - `docs`: changes to the documentation
+          - `workflow`: ci/cd in .github
+          - `refactor`: refactoring production code, eg. renaming a variable
+          - `style`: formatting, missing semi colons, etc; no production code change
+          - `test`: adding missing tests, refactoring tests; no production code change
+          - `website`
+          - `chore`: updating grunt tasks etc; no production code change
+
+
+  # Check if PR title contain valid types
   - name: Semantic PR Check
     conditions:
       - or:
