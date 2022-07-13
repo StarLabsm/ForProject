@@ -6,7 +6,6 @@
 # permission to link the program and your derivative works with the
 # separately licensed software that they have included with MySQL.
 #
-# This program is distributed in the hope that it will be useful,
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License, version 2.0, for more details.
 #
