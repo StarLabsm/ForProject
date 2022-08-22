@@ -5,7 +5,7 @@ queue_rules:
   - name: docs_queue
     conditions:
       - "#approved-reviews-by>=1"
-      # Docs queue need no check
+      # Docs queue need no checksuccess ci/cd
 
 pull_request_rules:
   - name: automatic merge of hotfix (high priority)
