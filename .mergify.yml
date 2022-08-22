@@ -16,7 +16,7 @@ pull_request_rules:
     actions:
       queue:
         name: shared_queue
-          #method: squash
+        method: squash
 
   - name: put other pr to merge queue
     conditions:
@@ -26,7 +26,7 @@ pull_request_rules:
     actions:
       queue:
         name: shared_queue
-          #method: squash
+        method: squash
 
   # Push docs PR into docs queue
   - name: Put into docs queue
