@@ -1,28 +1,41 @@
 queue_rules:
   - name: shared_queue
     conditions:
-      - "#approved-reviews-by>=2"
+      - "#approved-reviews-by>=1"
+  - name: docs_queue
+    conditions:
+      - "#approved-reviews-by>=1"
+      # Docs queue need no checksuccess ci/cd
 
 pull_request_rules:
   - name: automatic merge of hotfix (high priority)
     conditions:
-      - "#approved-reviews-by>=2"
+      - "#approved-reviews-by>=1"
       - label=A-bug
       - check-success=stonedb-build
     actions:
       queue:
         name: shared_queue
-        method: squash
+          #method: squash
 
   - name: put other pr to merge queue
     conditions:
-      - "#approved-reviews-by>=2"
+      - "#approved-reviews-by>=1"
       - label!=A-bug
       - check-success=stonedb-build
     actions:
       queue:
         name: shared_queue
-        method: squash
+          #method: squash
+
+  # Push docs PR into docs queue
+  - name: Put into docs queue
+    conditions:
+      - "#approved-reviews-by>=1"
+      - label=PR-docs
+    actions:
+      queue:
+        name: docs_queue
 
   # Check if PR title contain valid types
   - name: Comment PR if title not semantic
@@ -32,7 +45,7 @@ pull_request_rules:
     actions:
       comment:
         message: |
-          This pull request's title is not fulfill the requirements. @{{author}} please update it 🙏.
+          This pull request's title should follow requirements next. @{{author}} please check it :point_down:.
 
           Valid format:
 
