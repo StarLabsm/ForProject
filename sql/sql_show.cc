@@ -77,7 +77,7 @@
 #include <algorithm>
 #include <functional>
 
-#include "../storage/stonedb/handler/ha_rcengine.h"  //STONEDB UPGRADE
+#include "../storage/tianmu/handler/ha_rcengine.h"  // TIANMU UPGRADE
 using std::max;
 using std::min;
 
@@ -5222,18 +5222,19 @@ static int get_schema_tables_record(THD *thd, TABLE_LIST *tables,
         table->field[18]->store((longlong) file->checksum(), TRUE);
         table->field[18]->set_notnull();
       }
-      //STONEDB UPGRADE BEGIN
-      uint length = (uint) strlen(share->comment.str);
-      char* comment=(length > 64000 - 3)?(char*)(share->comment.str):share->comment.str;
-      //char *comment = show_table->file->update_table_comment(share->comment.str);
+
+      //TIANMU UPGRADE BEGIN 
+      char* comment=share->comment.str;
       if (comment)
       {
-        table->field[20]->store(comment,
-  	(comment == share->comment.str ? share->comment.length : strlen(comment)), cs);
+        table->field[20]->store(comment, (comment == share->comment.str ? share->comment.length : strlen(comment)), cs);
         if (comment != share->comment.str)
-  	    my_free(comment);
+        {
+            my_free(comment);
+        }  	    
       }
      //END
+
     }
   }
 
@@ -5534,7 +5535,7 @@ static int get_schema_column_record(THD *thd, TABLE_LIST *tables,
       table->field[IS_COLUMNS_GENERATION_EXPRESSION]->set_null();
     //table->field[IS_COLUMNS_COLUMN_COMMENT]->store(field->comment.str,
    //                                                field->comment.length, cs);
-   stonedb::dbhandler::SDB_UpdateAndStoreColumnComment(table, IS_COLUMNS_COLUMN_COMMENT, field, count - 1, cs);//STONEDB UPGRADE
+   Tianmu::dbhandler::TIANMU_UpdateAndStoreColumnComment(table, IS_COLUMNS_COLUMN_COMMENT, field, count - 1, cs);//TIANMU UPGRADE
     if (schema_table_store_record(thd, table))
       DBUG_RETURN(1);
   }

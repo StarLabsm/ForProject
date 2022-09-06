@@ -1243,6 +1243,95 @@ The following options may be given as the first argument:
  Define threads usage for handling queries, one of
  one-thread-per-connection, no-threads, loaded-dynamically
  --thread-stack=#    The stack size for each thread
+ --tianmu-async-join=name 
+ Set async join params: packStep;traverseCount;matchCount
+ --tianmu-bg-load-threads=# 
+ --tianmu-cachinglevel=# 
+ --tianmu-compensation-start 
+ --tianmu-control-trace[=#] 
+ ini controltrace
+ --tianmu-data-dir=name 
+ Specifies a directory to add to the tianmu data storage.
+ --tianmu-data-distribution-policy=name 
+ Specifies the policy to distribute column data among
+ multiple data directories.Possible values are
+ round-robin(default), random, and space
+ --tianmu-disk-usage-threshold=# 
+ Specifies the disk usage threshold for data diretories.
+ --tianmu-distinct-cache-size=# 
+ Upper byte limit for GroupDistinctCache buffer
+ --tianmu-enable-histogram-cmap-bloom 
+ --tianmu-enable-rowstore 
+ (Defaults to on; use --skip-tianmu-enable-rowstore to disable.)
+ --tianmu-filterevaluation-speedup 
+ (Defaults to on; use --skip-tianmu-filterevaluation-speedup to disable.)
+ --tianmu-force-hashjoin 
+ --tianmu-global-debug-level=# 
+ global debug level
+ --tianmu-groupby-speedup 
+ (Defaults to on; use --skip-tianmu-groupby-speedup to disable.)
+ --tianmu-hugefiledir=name 
+ --tianmu-index-cache-size=# 
+ Index cache size in MB
+ --tianmu-index-search 
+ (Defaults to on; use --skip-tianmu-index-search to disable.)
+ --tianmu-ini-allowmysqlquerypath=# 
+ --tianmu-ini-cachefolder=name 
+ --tianmu-ini-cachereleasethreshold=# 
+ --tianmu-ini-cachesizethreshold=# 
+ --tianmu-ini-controlquerylog=# 
+ global controlquerylog
+ --tianmu-ini-knlevel=# 
+ --tianmu-ini-pushdown 
+ (Defaults to on; use --skip-tianmu-ini-pushdown to disable.)
+ --tianmu-ini-servermainheapsize=# 
+ --tianmu-ini-threadpoolsize=# 
+ --tianmu-ini-usemysqlimportexportdefaults 
+ --tianmu-insert-buffer-size=# 
+ --tianmu-insert-cntthreshold=# 
+ --tianmu-insert-delayed 
+ (Defaults to on; use --skip-tianmu-insert-delayed to disable.)
+ --tianmu-insert-max-buffered=# 
+ --tianmu-insert-numthreshold=# 
+ --tianmu-insert-wait-ms=# 
+ --tianmu-insert-wait-time=# 
+ --tianmu-join-disable-switch-side 
+ --tianmu-join-parallel=# 
+ join matching parallel: 0-Disabled, 1-Auto, N-specify
+ count
+ --tianmu-join-splitrows=# 
+ join split rows:0-Disabled, 1-Auto, N-specify count
+ --tianmu-load-threads=# 
+ --tianmu-lookup-max-size=# 
+ Lookup dictionary max size
+ --tianmu-max-execution-time=# 
+ max query execution time in seconds
+ --tianmu-minmax-speedup 
+ (Defaults to on; use --skip-tianmu-minmax-speedup to disable.)
+ --tianmu-mm-hardlimit=# 
+ --tianmu-mm-largetemppool-threshold=# 
+ size threshold in MB for using large temp thread pool
+ --tianmu-mm-largetempratio=# 
+ --tianmu-mm-policy=name 
+ --tianmu-mm-releasepolicy=name 
+ --tianmu-orderby-speedup 
+ --tianmu-parallel-filloutput 
+ (Defaults to on; use --skip-tianmu-parallel-filloutput to disable.)
+ --tianmu-parallel-mapjoin 
+ --tianmu-qps-log    -
+ (Defaults to on; use --skip-tianmu-qps-log to disable.)
+ --tianmu-query-threads=# 
+ --tianmu-refresh-sys-tianmu 
+ (Defaults to on; use --skip-tianmu-refresh-sys-tianmu to disable.)
+ --tianmu-result-sender-rows=# 
+ The number of rows to load at a time when processing
+ queries like select xxx from yyya
+ --tianmu-session-debug-level=# 
+ session debug level
+ --tianmu-start-async=# 
+ Enable async, specifies async threads x/100 * cpus
+ --tianmu-sync-buffers=# 
+ --tianmu-trigger-error=name 
  --time-format=name  The TIME format (ignored)
  --tls-version=name  TLS version, permitted values are TLSv1, TLSv1.1,
  TLSv1.2(Only for openssl)
@@ -1315,11 +1404,11 @@ block-encryption-mode aes-128-ecb
 bulk-insert-buffer-size 8388608
 character-set-client-handshake TRUE
 character-set-filesystem binary
-character-set-server latin1
+character-set-server utf8
 character-sets-dir MYSQL_CHARSETSDIR/
 check-proxy-users FALSE
 chroot (No default value)
-collation-server latin1_swedish_ci
+collation-server utf8_general_ci
 completion-type NO_CHAIN
 concurrent-insert AUTO
 connect-timeout 10
@@ -1329,7 +1418,7 @@ date-format %Y-%m-%d
 datetime-format %Y-%m-%d %H:%i:%s
 default-authentication-plugin mysql_native_password
 default-password-lifetime 0
-default-storage-engine InnoDB
+default-storage-engine tianmu
 default-time-zone (No default value)
 default-tmp-storage-engine InnoDB
 default-week-format 0
@@ -1472,7 +1561,7 @@ old-passwords 0
 old-style-user-limits FALSE
 optimizer-prune-level 1
 optimizer-search-depth 62
-optimizer-switch index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=on,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=on,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on,prefer_ordering_index=on
+optimizer-switch index_merge=on,index_merge_union=on,index_merge_sort_union=on,index_merge_intersection=on,engine_condition_pushdown=on,index_condition_pushdown=on,mrr=on,mrr_cost_based=on,block_nested_loop=on,batched_key_access=off,materialization=on,semijoin=off,loosescan=on,firstmatch=on,duplicateweedout=on,subquery_materialization_cost_based=on,use_index_extensions=on,condition_fanout_filter=on,derived_merge=on,prefer_ordering_index=on
 optimizer-trace 
 optimizer-trace-features greedy_search=on,range_optimizer=on,dynamic_range=on,repeated_subselect=on
 optimizer-trace-limit 1
@@ -1623,6 +1712,63 @@ tc-heuristic-recover OFF
 thread-cache-size 9
 thread-handling one-thread-per-connection
 thread-stack 262144
+tianmu-async-join 1;0;0;0
+tianmu-bg-load-threads 0
+tianmu-cachinglevel 1
+tianmu-compensation-start FALSE
+tianmu-control-trace 0
+tianmu-data-distribution-policy space
+tianmu-disk-usage-threshold 85
+tianmu-distinct-cache-size 64
+tianmu-enable-histogram-cmap-bloom FALSE
+tianmu-enable-rowstore TRUE
+tianmu-filterevaluation-speedup TRUE
+tianmu-force-hashjoin FALSE
+tianmu-global-debug-level 4
+tianmu-groupby-speedup TRUE
+tianmu-hugefiledir 
+tianmu-index-cache-size 0
+tianmu-index-search TRUE
+tianmu-ini-allowmysqlquerypath 0
+tianmu-ini-cachefolder cache
+tianmu-ini-cachereleasethreshold 100
+tianmu-ini-cachesizethreshold 4
+tianmu-ini-controlquerylog 1
+tianmu-ini-knlevel 99
+tianmu-ini-pushdown TRUE
+tianmu-ini-servermainheapsize 0
+tianmu-ini-threadpoolsize 1
+tianmu-ini-usemysqlimportexportdefaults FALSE
+tianmu-insert-buffer-size 512
+tianmu-insert-cntthreshold 2
+tianmu-insert-delayed TRUE
+tianmu-insert-max-buffered 65536
+tianmu-insert-numthreshold 10000
+tianmu-insert-wait-ms 100
+tianmu-insert-wait-time 1000
+tianmu-join-disable-switch-side FALSE
+tianmu-join-parallel 1
+tianmu-join-splitrows 0
+tianmu-load-threads 0
+tianmu-lookup-max-size 100000
+tianmu-max-execution-time 0
+tianmu-minmax-speedup TRUE
+tianmu-mm-hardlimit 0
+tianmu-mm-largetemppool-threshold 16
+tianmu-mm-largetempratio 0
+tianmu-mm-policy 
+tianmu-mm-releasepolicy 2q
+tianmu-orderby-speedup FALSE
+tianmu-parallel-filloutput TRUE
+tianmu-parallel-mapjoin FALSE
+tianmu-qps-log TRUE
+tianmu-query-threads 0
+tianmu-refresh-sys-tianmu TRUE
+tianmu-result-sender-rows 65536
+tianmu-session-debug-level 3
+tianmu-start-async 0
+tianmu-sync-buffers 0
+tianmu-trigger-error (No default value)
 time-format %H:%i:%s
 tmp-table-size 16777216
 transaction-alloc-block-size 8192

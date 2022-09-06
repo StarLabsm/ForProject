@@ -14,6 +14,158 @@
 # table to deal with the restriction added to plugin value for users
 # in WL6982.
 Run mysql_upgrade once
+mysql_upgrade: [ERROR] 3003: Storage engine for table 'performance_schema'.'events_stages_history' is not loaded.
+mysql_upgrade: [ERROR] 1007: Can't create database 'performance_schema'; database exists
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/cond_instances.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_current.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_history.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_history_long.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_instance.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_account_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_thread_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_instances.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_instance.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/socket_instances.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/socket_summary_by_instance.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/socket_summary_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/host_cache.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/mutex_instances.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/objects_summary_global_by_type.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/performance_timers.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/rwlock_instances.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/setup_actors.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/setup_consumers.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/setup_instruments.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/setup_objects.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/setup_timers.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_index_usage.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_table.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_lock_waits_summary_by_table.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/threads.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_current.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_history.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_history_long.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_by_thread_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_by_account_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_current.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_history.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_history_long.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_thread_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_account_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/hosts.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/users.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/accounts.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to EXECUTE
+mysql_upgrade: [ERROR] 1243: Unknown prepared statement handler (stmt) given to DEALLOCATE PREPARE
 mysql_upgrade: [ERROR] 1072: Key column 'Id' doesn't exist in table
 mysql.columns_priv                                 OK
 mysql.db                                           OK
@@ -47,7 +199,90 @@ mysql.time_zone_name                               OK
 mysql.time_zone_transition                         OK
 mysql.time_zone_transition_type                    OK
 mysql.user                                         OK
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_history_long.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_history_long.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_thread_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_thread_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_instance.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_instance.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_instance.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_instance.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/threads.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/threads.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_index_usage.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_index_usage.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/file_summary_by_instance.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_table.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_table.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_table.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_table.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_index_usage.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_index_usage.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/table_io_waits_summary_by_index_usage.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/threads.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/threads.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1146: Table 'sys.x$ps_digest_avg_latency_distribution' doesn't exist
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_digest.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/accounts.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/accounts.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_statements_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_stages_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/accounts.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/accounts.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_user_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_by_host_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/events_waits_summary_global_by_event_name.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/setup_instruments.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/threads.frm'
+mysql_upgrade: [ERROR] 1033: Incorrect information in file: './performance_schema/threads.frm'
+mysql_upgrade: [ERROR] 1146: Table 'sys.processlist' doesn't exist
+mysql_upgrade: [ERROR] 1146: Table 'sys.x$processlist' doesn't exist
 sys.sys_config                                     OK
+sys_tianmu.column_ttl                              OK
+sys_tianmu.columns                                 OK
+sys_tianmu.decomposition_dictionary                OK
+sys_tianmu.logs                                    OK
 test.emp1                                          OK
 test.emp2
 error    : Partitioning upgrade required. Please dump/reload to fix it or do: ALTER TABLE `test`.`emp2` UPGRADE PARTITIONING

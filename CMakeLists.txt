@@ -1,12 +1,18 @@
 # Copyright (c) 2006, 2021, Oracle and/or its affiliates.
 # 
+# This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
 #
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms,
 # as designated in a particular file or component or in included license
+# documentation.  The authors of MySQL hereby grant you an additional
 # permission to link the program and your derivative works with the
 # separately licensed software that they have included with MySQL.
 #
 # This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License, version 2.0, for more details.
 #
@@ -24,7 +30,7 @@ ELSE()
   CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
 ENDIF()
 
-# We use CMAKE_SHARED_LIBRARY_<Lang>_FLAGS. See cmake --help-policy CMP0
+# We use CMAKE_SHARED_LIBRARY_<Lang>_FLAGS. See cmake --help-policy CMP0018
 IF(CMAKE_VERSION VERSION_GREATER "2.8.8")
   CMAKE_POLICY(SET CMP0018 OLD)
 ENDIF()
@@ -297,6 +303,29 @@ OPTION(WITH_AUTHENTICATION_LDAP
 OPTION(FORCE_UNSUPPORTED_COMPILER "Disable compiler version checks" OFF)
 MARK_AS_ADVANCED(WITHOUT_SERVER DISABLE_SHARED FORCE_UNSUPPORTED_COMPILER)
 
+#for boost, to check boost params.
+INCLUDE(cmake/boost.cmake)
+#Link directories under boost, etc.
+IF (WITH_BOOST)
+  INCLUDE_DIRECTORIES("${WITH_BOOST}/include")
+  LINK_DIRECTORIES("${WITH_BOOST}/lib/")
+ENDIF ()
+
+#for rocksdb, to check rocksdb
+INCLUDE(cmake/rocksdb.cmake)
+#Link directories under rocksdb, etc.
+IF (WITH_ROCKSDB)
+  INCLUDE_DIRECTORIES("${WITH_ROCKSDB}" "${WITH_ROCKSDB}/include")
+  LINK_DIRECTORIES("${WITH_ROCKSDB}")
+ENDIF ()
+
+#for marisa, to check marisa
+INCLUDE(cmake/marisa.cmake)
+#Link directories under marisa, etc.
+IF (WITH_MARISA)
+  INCLUDE_DIRECTORIES("${WITH_MARISA}" "${WITH_MARISA}/include")
+  LINK_DIRECTORIES("${WITH_MARISA}" "${WITH_MARISA}/lib")
+ENDIF ()
 
 include(CheckCSourceCompiles)
 include(CheckCXXSourceCompiles)
@@ -475,6 +504,13 @@ IF (USE_CXX11 AND CMAKE_COMPILER_IS_GNUCC AND CMAKE_COMPILER_IS_GNUCXX)
           "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -static-libstdc++ -static-libgcc")
 ENDIF()
 
+IF(WITH_BOOST AND WITH_ROCKSDB AND WITH_MARISA)
+SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH};${WITH_BOOST}/lib;${WITH_ROCKSDB};${WITH_MARISA}/lib")
+ELSE()
+SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH};${BOOST_INCLUDE_DIR};${ROCKSDB_INCLUDE_DIR};${MARISA_INCLUDE_DIR}")
+ENDIF()
+MESSAGE(STATUS "TO SET INSTALL RPATH FOR STONEDB: ${CMAKE_INSTALL_RPATH}")
+
 OPTION(ENABLED_LOCAL_INFILE
  "If we should enable LOAD DATA LOCAL by default" ${IF_WIN})
 MARK_AS_ADVANCED(ENABLED_LOCAL_INFILE)
@@ -559,8 +595,6 @@ ELSE()
   SET(DEFAULT_TMPDIR "\"${TMPDIR}\"")
 ENDIF()
 
-INCLUDE(cmake/boost.cmake)
-
 IF (CMAKE_SYSTEM_NAME MATCHES "Linux")
   OPTION(WITH_SYSTEMD "Enable installation of systemd support files" OFF)
   IF (WITH_SYSTEMD)
@@ -577,7 +611,8 @@ INCLUDE(configure.cmake)
 
 # Common defines and includes
 ADD_DEFINITIONS(-DHAVE_CONFIG_H)
-ADD_DEFINITIONS(-DSTONEDB)
+ADD_DEFINITIONS(-DTIANMU)
+ADD_DEFINITIONS(-D_GLIBCXX_USE_CXX11_ABI=1)
 INCLUDE_DIRECTORIES(
   ${CMAKE_CURRENT_BINARY_DIR}/include
   ${CMAKE_SOURCE_DIR}/extra/rapidjson/include
@@ -759,7 +794,6 @@ IF(NOT WITHOUT_SERVER)
   ADD_SUBDIRECTORY(mysql-test)
   ADD_SUBDIRECTORY(mysql-test/lib/My/SafeProcess)
   ADD_SUBDIRECTORY(support-files)
-  ADD_SUBDIRECTORY(install_scripts)
   IF(EXISTS ${CMAKE_SOURCE_DIR}/internal/CMakeLists.txt)
     ADD_SUBDIRECTORY(internal)
   ENDIF()
@@ -845,7 +879,7 @@ IF(WIN32)
   SET(CPACK_GENERATOR "ZIP")
 ELSE()
   SET(CPACK_GENERATOR "TGZ")
-ENDIF() 
+ENDIF()
 ADD_SUBDIRECTORY(packaging/WiX)
 ADD_SUBDIRECTORY(packaging/solaris)
 
