@@ -12,7 +12,7 @@ on:
       - '.devcontainer/**'
   pull_request:
     branches-ignore:
-      - main
+      - main1
         # wait for mergify to ignore
         #paths-ignore:
             #- 'Docs/**'
