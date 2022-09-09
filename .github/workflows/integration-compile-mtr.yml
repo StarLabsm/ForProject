@@ -3,7 +3,7 @@ name: Compile & MTR
 on:
   push:
     branches-ignore:
-      - main
+      - main1
     paths-ignore:
       - 'docs/**'
       - 'website/**'
@@ -12,7 +12,7 @@ on:
       - '.devcontainer/**'
   pull_request:
     branches-ignore:
-      - main
+      - main1
         # wait for mergify to ignore
         #paths-ignore:
             #- 'Docs/**'
