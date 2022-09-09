@@ -29,6 +29,7 @@ The following table describes required parameters.
 | -A | The name of the database. |
 | -S | The name of the .sock file that is used to connect to StoneDB. |
 
+aaa
 
 :::tip
 
