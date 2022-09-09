@@ -2,8 +2,8 @@ queue_rules:
   - name: shared_queue
     conditions:
       - "#approved-reviews-by>=1"
-  - name: docs_queue
-    conditions: []
+#   - name: docs_queue
+#     conditions: 
      # - "#approved-reviews-by>=1"
       # Docs queue need no checksuccess ci/cd
 
@@ -29,14 +29,14 @@ pull_request_rules:
         method: squash
 
   # Push docs PR into docs queue
-  - name: Put into docs queue
-    conditions:
-      - "#approved-reviews-by>=1"
-      - label=PR-docs
-    actions:
-      queue:
-        name: docs_queue
-        method: squash
+#   - name: Put into docs queue
+#     conditions:
+#       - "#approved-reviews-by>=1"
+#       - label=PR-docs
+#     actions:
+#       queue:
+#         name: docs_queue
+#         method: squash
 
   # Check if PR title contain valid types
   - name: Comment PR if title not semantic
