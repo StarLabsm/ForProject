@@ -6,6 +6,7 @@ on:
       - main1
     paths-ignore:
       - 'docs/**'
+      - 'Docs/**'
       - 'website/**'
       - '**.md'
       - 'scripts/setup/**'
@@ -13,6 +14,13 @@ on:
   pull_request:
     branches-ignore:
       - main1
+    paths-ignore:
+      - 'docs/**'
+      - 'Docs/**'
+      - 'website/**'
+      - '**.md'
+      - 'scripts/setup/**'
+      - '.devcontainer/**'
         # wait for mergify to ignore
         #paths-ignore:
             #- 'Docs/**'
