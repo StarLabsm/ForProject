@@ -14,8 +14,9 @@ pull_request_rules:
       - label=PR-bug
       - check-success=stonedb-build
     actions:
-      squash:
-        commit_message: first-commit
+      queue:
+        name: shared_queue
+        method: squash
 
   - name: put other pr to merge queue
     conditions:
@@ -23,8 +24,9 @@ pull_request_rules:
       - label!=PR-bug
       - check-success=stonedb-build
     actions:
-      squash:
-        commit_message: first-commit
+      queue:
+        name: shared_queue
+        method: squash
 
   # Push docs PR into docs queue
 #   - name: Put into docs queue
