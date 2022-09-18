@@ -14,8 +14,8 @@ pull_request_rules:
       - label=PR-bug
       - check-success=stonedb-build
     actions:
-      squash:
-        commit_message: first-commit
+#       squash:
+#         commit_message: first-commit
       queue:
         name: shared_queue
 
@@ -25,8 +25,8 @@ pull_request_rules:
       - label!=PR-bug
       - check-success=stonedb-build
     actions:
-      squash:
-        commit_message: first-commit
+#       squash:
+#         commit_message: first-commit
       queue:
         name: shared_queue
 
