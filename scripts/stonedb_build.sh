@@ -1,8 +1,5 @@
 #!/bin/sh
-#aaaa
-#bbbb
-#123
-#456
+#zsp test1 
 
 set -e
 
