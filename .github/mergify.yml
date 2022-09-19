@@ -1,5 +1,5 @@
 queue_rules:
-  - name: default
+  - name: shared_queue
     conditions: []  # no extra conditions needed to get merged
 
 pull_request_rules:
