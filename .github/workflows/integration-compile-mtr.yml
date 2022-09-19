@@ -19,6 +19,7 @@ on:
       - 'Docs/**'
       - 'website/**'
       - '**.md'
+      - 'scripts/**'
       - 'scripts/setup/**'
       - '.devcontainer/**'
         # wait for mergify to ignore
