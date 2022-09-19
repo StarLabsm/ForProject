@@ -4,14 +4,15 @@ queue_rules:
       - "#approved-reviews-by>=1"
 
 pull_request_rules:
-  - name: merge using the merge queue
+  - name: Put into shared queue
     conditions:
-      #- base=main
-      - "#approved-reviews-by>=1"
+      - "#approved-reviews-by>=2"
+      - -draft
+#       - label!=pr-doc
+#       - label!=pr-rfc
     actions:
       queue:
         name: shared_queue
-        method: rebase
 
 
   # Check if PR title contain valid types
