@@ -4,7 +4,7 @@ queue_rules:
       - "#approved-reviews-by>=1"
 
 pull_request_rules:
-  - name: Put into shared queue
+  - name: Put into shared queue1
     conditions:
       - "#approved-reviews-by>=2"
       - -draft
