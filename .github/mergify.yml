@@ -12,7 +12,7 @@ pull_request_rules:
     conditions:
       - "#approved-reviews-by>=1"
       - label=PR-bug
-      - check-success=stonedb-build
+      #- check-success=stonedb-build
     actions:
 #       squash:
 #         commit_message: first-commit
