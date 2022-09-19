@@ -6,7 +6,7 @@ queue_rules:
 pull_request_rules:
   - name: Put into shared queue
     conditions:
-      - "#approved-reviews-by>=2"
+      - "#approved-reviews-by>=1"
       - -draft
 #       - label!=pr-doc
 #       - label!=pr-rfc
