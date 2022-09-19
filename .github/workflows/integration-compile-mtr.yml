@@ -21,6 +21,7 @@ on:
       - '**.md'
       - 'scripts/setup/**'
       - '.devcontainer/**'
+      - '.github/**'
         # wait for mergify to ignore
         #paths-ignore:
             #- 'Docs/**'
