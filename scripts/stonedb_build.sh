@@ -2,6 +2,7 @@
 #zsp test1 
 #123
 #bbbb1
+#feat(script):add test2
 
 set -e
 
