@@ -9,6 +9,7 @@ on:
       - 'Docs/**'
       - 'website/**'
       - '**.md'
+      - 'scripts/**'
       - 'scripts/setup/**'
       - '.devcontainer/**'
   pull_request:
