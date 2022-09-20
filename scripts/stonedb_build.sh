@@ -1,5 +1,5 @@
 #!/bin/sh
-#zsp
+
 
 set -e
 
