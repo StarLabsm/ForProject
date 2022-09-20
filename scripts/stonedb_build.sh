@@ -1,6 +1,4 @@
 #!/bin/sh
-#aaaa
-#bbbb
 #zsp
 
 set -e
