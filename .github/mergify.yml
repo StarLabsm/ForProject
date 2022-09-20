@@ -13,7 +13,7 @@ pull_request_rules:
     actions:
       queue:
         name: shared_queue
-        method: rebase
+        #method: rebase
 
 
   # Check if PR title contain valid types
