@@ -1,6 +1,6 @@
 queue_rules:
   - name: shared_queue
-    conditions:  # no extra conditions needed to get merged
+    conditions: 
       - "#approved-reviews-by>=1"
 
 pull_request_rules:
