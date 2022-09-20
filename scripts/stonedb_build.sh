@@ -1,5 +1,5 @@
 #!/bin/sh
-#qwe
+#asd
 
 set -e
 
