@@ -9,7 +9,6 @@ on:
       - 'Docs/**'
       - 'website/**'
       - '**.md'
-      - 'scripts/**'
       - 'scripts/setup/**'
       - '.devcontainer/**'
   pull_request:
@@ -20,7 +19,6 @@ on:
       - 'Docs/**'
       - 'website/**'
       - '**.md'
-      - 'scripts/**'
       - 'scripts/setup/**'
       - '.devcontainer/**'
         # wait for mergify to ignore
@@ -107,8 +105,8 @@ jobs:
           -DDEFAULT_CHARSET=utf8 \
           -DDEFAULT_COLLATION=utf8_general_ci \
           -DWITH_BOOST=/usr/local/stonedb-boost/include
-          sudo make VERBOSE=1 -j`nproc`
-          sudo make install -j`nproc`
+          #sudo make VERBOSE=1 -j`nproc`
+          #sudo make install -j`nproc`
 
           #- name: mtr test
           #  run: |
