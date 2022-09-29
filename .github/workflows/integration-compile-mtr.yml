@@ -40,7 +40,8 @@ env:
 
 jobs:
   stonedb-build:
-    runs-on: ubuntu-18.04
+    #runs-on: ubuntu-18.04
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v3
@@ -105,8 +106,8 @@ jobs:
           -DDEFAULT_CHARSET=utf8 \
           -DDEFAULT_COLLATION=utf8_general_ci \
           -DWITH_BOOST=/usr/local/stonedb-boost/include
-          sudo make VERBOSE=1 -j`nproc`
-          sudo make install -j`nproc`
+          #sudo make VERBOSE=1 -j`nproc`
+          #sudo make install -j`nproc`
 
           #- name: mtr test
           #  run: |
@@ -120,10 +121,10 @@ jobs:
           
           
           
-      - name: pack
-        run: sudo tar zcvf ./stonedb57.tar.gz /stonedb57
+#       - name: pack
+#         run: sudo tar zcvf ./stonedb57.tar.gz /stonedb57
       
-      - uses: actions/upload-artifact@v3
-        with:
-          name: stonedb-artifact
-          path: ./stonedb57.tar.gz
+#       - uses: actions/upload-artifact@v3
+#         with:
+#           name: stonedb-artifact
+#           path: ./stonedb57.tar.gz
