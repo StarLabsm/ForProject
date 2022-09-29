@@ -8,6 +8,7 @@ pull_request_rules:
     conditions:
       - "#approved-reviews-by>=1"
       - -draft
+      - check-success=stonedb-build*
 #       - label!=pr-doc
 #       - label!=pr-rfc
     actions:
