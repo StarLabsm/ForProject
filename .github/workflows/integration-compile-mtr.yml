@@ -41,7 +41,7 @@ env:
 
 
 jobs:
-  stonedb-build-ubuntu2004:
+  stonedb-build-centos7:
     runs-on: ubuntu-18.04
 
     steps:
