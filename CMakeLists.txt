@@ -1,6 +1,5 @@
 # Copyright (c) 2006, 2021, Oracle and/or its affiliates.
 # 
-# it under the terms of the GNU General Public License, version 2.0,
 #
 # as designated in a particular file or component or in included license
 # permission to link the program and your derivative works with the
