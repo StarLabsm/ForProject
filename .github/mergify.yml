@@ -2,13 +2,13 @@ queue_rules:
   - name: shared_queue
     conditions: 
       - "#approved-reviews-by>=1"
+      - check-success~=^stonedb-build-(.*)
 
 pull_request_rules:
   - name: Put into shared queue
     conditions:
       - "#approved-reviews-by>=1"
       - -draft
-      - check-success=stonedb-build-ubuntu2004
 #       - label!=pr-doc
 #       - label!=pr-rfc
     actions:
