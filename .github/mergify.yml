@@ -2,7 +2,7 @@ queue_rules:
   - name: shared_queue
     conditions: 
       - "#approved-reviews-by>=1"
-      - check-success~=^stonedb-build-(.*)
+      - check-success~=^stonedb-build(.*)
 
 pull_request_rules:
   - name: Put into shared queue
